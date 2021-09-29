@@ -1,0 +1,52 @@
+PIP
+------------------------------------------------------------------
+python -m pip install --user --upgrade pip
+python -m pip --version
+
+
+VIRTUAL ENVIRONMENT
+------------------------------------------------------------------
+pip install --user virtualenv
+python -m venv env
+.\env\Scripts\activate
+
+
+APP LIBS
+------------------------------------------------------------------
+pip install fastapi
+pip install gunicorn
+pip install python-multipart
+pip install python-jose
+pip install passlib
+pip install bcrypt
+
+GENERATE REQUIREMENTS.TXT
+------------------------------------------------------------------
+pip freeze > requirements.txt
+
+
+FOR FASTAPI TO DEPLOY IN GCLOUD MUST ADD TO REQUIREMENTS
+------------------------------------------------------------------
+fastapi==0.68.1
+uvicorn==0.13.4
+-- manual gcloud adds
+gunicorn==20.0.4
+uvloop==0.15.2   
+httptools==0.1.1
+
+
+GCLOUD CMD COMMANDS
+------------------------------------------------------------------
+gcloud init
+gcloud app deploy
+gcloud app browse
+
+
+SECURITY
+------------------------------------------------------------------
+# https://fastapi.tiangolo.com/tutorial/security/first-steps/
+
+
+Generate 32-bit hex code (only works in bash)
+------------------------------------------------------------------
+openssl rand -hex 32

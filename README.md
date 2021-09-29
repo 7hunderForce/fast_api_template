@@ -1,1 +1,1 @@
-# fast_api_template
+# FastAPI Template
